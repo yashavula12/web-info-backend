@@ -32,7 +32,7 @@ jobs:
           git pull origin main
           git branch
           git status
-          docker build -t web-info-backend:latest
+          docker build -t web-info-backend:latest .
           docker images
           docker ps
           docker stop web-info-backend-app
