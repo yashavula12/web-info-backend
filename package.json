@@ -1,0 +1,24 @@
+{
+  "name": "web-info-backend-api",
+  "version": "1.0.0",
+  "description": "This is my app to get data from mongo db and server to user",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\"https://github.com/yashavula12/web-info-backend-api.git\""
+  },
+  "author": "yaswanth",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
