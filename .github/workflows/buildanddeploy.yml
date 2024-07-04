@@ -30,3 +30,11 @@ jobs:
           pwd
           echo "PWD"
           git pull origin main
+          git branch
+          git status
+          docker build -t web-info-backend:latest
+          docker images
+          docker ps
+          docker stop web-info-backend-app
+          docker rm web-info-backend-app
+          docker run -d --name web-info-backend-app -p 8083:5001 web-info-backend
