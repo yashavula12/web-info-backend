@@ -1,0 +1,32 @@
+name: Build and Deploy to VPS
+
+on:
+  workflow_dispatch:
+    
+  push:
+    branches:
+      - main  # Trigger the action on pushes to the main branch
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    - name: Print VPS Details
+      run: |
+        echo "VPS Host: ${{ secrets.HOST }}"
+        echo "VPS User: ${{ secrets.USERNAME }}"
+        
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd /usr/projects/pass-hash-ui
+          pwd
+          echo "PWD"
+          git pull origin main
