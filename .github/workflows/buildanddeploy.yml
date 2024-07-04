@@ -37,4 +37,4 @@ jobs:
           docker ps
           docker stop web-info-backend-app
           docker rm web-info-backend-app
-          docker run -d --name web-info-backend-app -p 8083:5001 web-info-backend
+          docker run -d --name web-info-backend-app -p 8080:5001 web-info-backend
