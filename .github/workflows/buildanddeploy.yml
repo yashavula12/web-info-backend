@@ -26,7 +26,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd /usr/projects/pass-hash-ui
+          cd /usr/projects/web-info-backend
           pwd
           echo "PWD"
           git pull origin main
