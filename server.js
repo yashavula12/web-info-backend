@@ -1,9 +1,19 @@
 const express = require("express");
+const errorHandler = require("./middleware/errorhandler");
+const connectDb = require("./config/dbConnection");
 const dotenv = require("dotenv").config();
+const bodyparser = require("body-parser");
 
 const app = express();
 
 const port = process.env.PORT || 5000;
+
+connectDb();
+
+app.use(express.json());
+app.use(errorHandler);
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 app.use("/api/webinfo", require("./routes/webinfoRoutes"));
 
