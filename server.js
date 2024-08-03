@@ -11,11 +11,11 @@ const port = process.env.PORT || 5000;
 connectDb();
 
 app.use(express.json());
-app.use(errorHandler);
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-
 app.use("/api/webinfo", require("./routes/webinfoRoutes"));
+
+app.use(errorHandler);
 
 app.get("/api/webinfo", (req, res) => {
   res.status(200).json({ Message: "hello" });
